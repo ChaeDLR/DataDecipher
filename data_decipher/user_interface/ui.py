@@ -27,14 +27,16 @@ class UserInterface:
         return set (name, year)"""
 
         print("Enter name to search for.")
-        usersName = input()
+        usersName = input().rstrip(" ")
         print("Enter year to search.")
         print("(Enter nothing or 0 to search all years.)")
-        usersYear = input()
+        usersYear = input().rstrip(" ")
         print()
 
         if not usersYear:
             usersYear = 0
+
+        usersYear = int(usersYear)
 
         return (usersName, usersYear)
 
@@ -46,20 +48,16 @@ class UserInterface:
         return users_name
 
     @staticmethod
-    def PrintTotalBorn(dataList: list):
-        total_born = 0
-        males_born = 0
-        females_born = 0
-        for i in range(len(dataList)):
-            matches = dataList[i]
-            total_born += int(matches[3])
-            if matches[2] == "M":
-                males_born += int(matches[3])
-            elif matches[2] == "F":
-                females_born += int(matches[3])
-        print(f"Total people with the name in data: {total_born}")
-        print(f"Females: {females_born}")
-        print(f"Males: {males_born}")
+    def PrintTotalBorn(dataDict: dict):
+        total = dataDict["total"]
+        total_females = dataDict["females"]
+        total_males = dataDict["males"]
+        year_range = dataDict["range"]
+
+        print(f"Total people with the name in data: {total} ")
+        print(f"Females: {total_females}")
+        print(f"Males: {total_males}")
+        print(f"Year range: {year_range}\n")
 
     @staticmethod
     def PrintSearchResults(matches_list: list):
@@ -69,4 +67,4 @@ class UserInterface:
             print(matches[0])
             print(f"Year: {matches[1]}")
             print(f"Gender: {matches[2]}")
-            print(f"Number of people born with the name that year: {matches[3]}")
+            print(f"Number of people born with the name that year: {matches[3]}\n")
