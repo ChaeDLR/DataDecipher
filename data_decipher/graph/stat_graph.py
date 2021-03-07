@@ -5,7 +5,6 @@ class DataGraph:
     @staticmethod
     def display_graph(x_axe: str, y_axe: str, data: list):
         """ display a graph with the given values """
-        # TODO: Graph needs work in order to display data correctly
         name = data[0][0]
         years_list = []
         people_born = []
@@ -19,7 +18,6 @@ class DataGraph:
         y_ticks.sort()
 
         fig, names_plot = plt.subplots()
-        # names_plot.plot(years_list, people_born, linewidth=3, color="b")
 
         plt.bar(years_list, people_born)
         names_plot.set_title(name, fontsize=20)
