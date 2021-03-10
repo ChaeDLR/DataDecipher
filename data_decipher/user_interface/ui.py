@@ -54,7 +54,7 @@ class UserInterface:
         total_males = dataDict["males"]
         year_range = dataDict["range"]
 
-        print(f"Total people with the name in data: {total} ")
+        print(f"Total people with the name: {total} ")
         print(f"Females: {total_females}")
         print(f"Males: {total_males}")
         print(f"Year range: {year_range}\n")
@@ -67,4 +67,4 @@ class UserInterface:
             print(matches[0])
             print(f"Year: {matches[1]}")
             print(f"Gender: {matches[2]}")
-            print(f"Number of people born with the name that year: {matches[3]}\n")
+            print(f"Number of people born with the name that year: {int(matches[3])}\n")

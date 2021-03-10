@@ -1,7 +1,7 @@
 #!/venv/bin/python
 from processing.processor import Processor
 from user_interface.ui import UserInterface
-from graph.stat_graph import DataGraph
+from graph.data_graph import DataGraph
 
 
 class DataDecipher:
