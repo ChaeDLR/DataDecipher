@@ -18,7 +18,7 @@ class Processor:
                         for line in file.readlines():
                             fileDataList.append(line)
                         fileDataDict[fileName[0:7]] = copy.deepcopy(fileDataList)
-                        fileDataList = []
+                        fileDataList.clear()
 
                 except IOError:
                     print(f"Failed to load the file {fileName}")
@@ -63,8 +63,8 @@ class Processor:
     def SearchData(searchStr: str, dataDict: dict, yearFilter=0) -> list:
         """ Search a dict for the searchStr arg """
 
-        matchesList = []
-        match_finds = 0
+        matchesList: list = []
+        match_finds: int = 0
 
         for dataList in dataDict:
             for dataStr in dataDict[dataList]:
